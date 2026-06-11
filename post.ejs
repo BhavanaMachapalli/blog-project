@@ -1,0 +1,51 @@
+<%- include("partials/header.ejs") %>
+
+<section class="post-page">
+
+  <article class="full-post-card">
+
+    <img
+  src="<%= post.image %>"
+  alt="<%= post.title %>"
+  class="post-banner"
+>
+    <div class="post-header">
+    
+      <span class="post-category">
+        <%= post.category || "General" %>
+      </span>
+
+      <h1>
+        <%= post.title %>
+      </h1>
+
+    </div>
+
+    <div class="post-body">
+
+      <p>
+        <%= post.content %>
+      </p>
+
+    </div>
+
+    <div class="post-footer">
+
+      <a href="/" class="back-btn">
+        ← Back to Home
+      </a>
+
+      <a
+        href="/edit/<%= post.id %>"
+        class="edit-post-btn"
+      >
+        Edit Post
+      </a>
+
+    </div>
+
+  </article>
+
+</section>
+
+<%- include("partials/footer.ejs") %>

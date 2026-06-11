@@ -1,0 +1,48 @@
+<%- include("partials/header") %>
+
+<section class="compose-page">
+
+  <div class="compose-card">
+
+    <h1>Create New Post</h1>
+
+    <form action="/compose" method="POST">
+
+      <label>Title</label>
+      <input
+        type="text"
+        name="title"
+        placeholder="Enter post title"
+        required
+      >
+
+      <label>Category</label>
+      <select name="category">
+
+        <option value="Technology">Technology</option>
+        <option value="Travel">Travel</option>
+        <option value="Food">Food</option>
+        <option value="Life">Life</option>
+
+      </select>
+
+      <label>Content</label>
+
+      <textarea
+        name="content"
+        rows="12"
+        placeholder="Write your blog post here..."
+        required
+      ></textarea>
+
+      <button type="submit">
+        Publish Post
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<%- include("partials/footer") %>

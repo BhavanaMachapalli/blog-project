@@ -1,0 +1,93 @@
+<%- include("partials/header.ejs") %>
+
+<section class="contact-hero">
+
+  <h1>Contact Us</h1>
+
+  <p>
+    We'd love to hear from you. Feel free to reach out
+    with questions, feedback, or collaboration ideas.
+  </p>
+
+</section>
+
+<% if(typeof success !== "undefined" && success){ %>
+
+  <div class="success-message">
+    ✅ Thank you for contacting us!
+    We received your message.
+  </div>
+
+<% } %>
+
+<section class="contact-container">
+
+  <div class="contact-card">
+
+    <h2>Send a Message</h2>
+
+    <form action="/contact" method="POST">
+
+      <label>Name</label>
+      <input
+        type="text"
+        placeholder="Enter your name"
+      >
+
+      <label>Email</label>
+      <input
+        type="email"
+        placeholder="Enter your email"
+      >
+
+      <label>Message</label>
+
+      <textarea
+        placeholder="Write your message..."
+      ></textarea>
+
+      <button type="submit">
+        Send Message
+      </button>
+
+    </form>
+
+  </div>
+
+  <div class="contact-info">
+
+    <div class="info-card">
+
+      <h3>📧 Email</h3>
+
+      <p>
+        myblog@example.com
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>📞 Phone</h3>
+
+      <p>
+        +91 9876543210
+      </p>
+
+    </div>
+
+    <div class="info-card">
+
+      <h3>📍 Address</h3>
+
+      <p>
+        Anantapur, Andhra Pradesh
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<%- include("partials/footer.ejs") %>

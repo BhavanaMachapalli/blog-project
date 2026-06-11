@@ -1,0 +1,85 @@
+<%- include("partials/header.ejs") %>
+
+<section class="edit-page">
+
+  <div class="edit-card">
+
+    <h1>Edit Post</h1>
+
+    <form
+      action="/edit/<%= post.id %>"
+      method="POST"
+    >
+
+      <label>Title</label>
+
+      <input
+        type="text"
+        name="title"
+        value="<%= post.title %>"
+        required
+      >
+
+      <label>Category</label>
+
+      <select
+        name="category"
+        required
+      >
+
+        <option
+          value="Technology"
+          <%= post.category === "Technology" ? "selected" : "" %>
+        >
+          Technology
+        </option>
+
+        <option
+          value="Travel"
+          <%= post.category === "Travel" ? "selected" : "" %>
+        >
+          Travel
+        </option>
+
+        <option
+          value="Food"
+          <%= post.category === "Food" ? "selected" : "" %>
+        >
+          Food
+        </option>
+
+        <option
+          value="Life"
+          <%= post.category === "Life" ? "selected" : "" %>
+        >
+          Life
+        </option>
+
+      </select>
+
+      <label>Content</label>
+
+      <textarea
+        name="content"
+        required
+      ><%= post.content %></textarea>
+
+      <div class="edit-actions">
+
+        <a href="/" class="cancel-btn">
+          Cancel
+        </a>
+
+        <button type="submit">
+          Save Changes
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+<%- include("partials/footer.ejs") %>
